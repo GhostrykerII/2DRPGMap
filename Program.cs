@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2DRPGMAP2
+namespace _2DRPGMap
 {
     internal class Program
     {
@@ -13,7 +13,7 @@ namespace _2DRPGMAP2
         static string p;
         static int rows, columns;
 
-        static char[,] map = new char[,] // dimensions defined by following data:
+        static char[,] map = new char[,] 
     {
         {'^','^','^','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
         {'^','^','`','`','`','`','*','*','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','~','~','~','`','`','`'},
@@ -28,6 +28,8 @@ namespace _2DRPGMAP2
         {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
         {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
     };
+
+
         static void Main(string[] args)
         {
             scale = 3;
@@ -39,8 +41,6 @@ namespace _2DRPGMAP2
             rows = map.GetLength(0);
             columns = map.GetLength(1);
 
-            Console.WriteLine("The array is " + rows + " rows tall and " + columns + " columns wide.");
-            Console.WriteLine();
 
             DisplayMap();
 
@@ -50,6 +50,8 @@ namespace _2DRPGMAP2
 
             Console.ReadKey();
         }
+
+
         static void DisplayMap()
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -59,13 +61,15 @@ namespace _2DRPGMAP2
                 for (int y = 0; y < columns; y++)
                 {
                     ColourCode(x, y);
-                    Console.Write(map[x, y]); //writes the single character located at array index x, y
+                    Console.Write(map[x, y]);
                 }
-                Console.WriteLine(); //line breaks when the current row is done being written
+                Console.WriteLine(); 
             }
 
             Console.ResetColor();
         }
+
+
         static void DisplayMap(int scale)
         {
             int bordersize = columns * scale;
@@ -91,15 +95,18 @@ namespace _2DRPGMAP2
                 }
             }
             Console.BackgroundColor = ConsoleColor.Black;
+
             for (int r = 0; r < bordersize; r++)
             {
                 Console.Write("#");
             }
             Console.WriteLine();
         }
-        static void ColourCode(int x, int y)
+
+
+        static void ColourCode(int x, int y) //Colours
         {
-            switch (map[x, y]) //checks the characters in the array and assigns them colours
+            switch (map[x, y]) 
             {
                 case '^':
                     Console.BackgroundColor = ConsoleColor.DarkGray;
@@ -117,10 +124,6 @@ namespace _2DRPGMAP2
                     Console.BackgroundColor = ConsoleColor.Black;
                     break;
             }
-        }
-        static void PlayerChoice()
-        {
-
         }
     }
 }

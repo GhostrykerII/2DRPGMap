@@ -9,8 +9,6 @@ namespace _2DRPGMap
     internal class Program
     {
         static int scale;
-        static int x, y, origx, origy;
-        static string p;
         static int rows, columns;
 
         static char[,] map = new char[,] 
@@ -32,12 +30,7 @@ namespace _2DRPGMap
 
         static void Main(string[] args)
         {
-            scale = 3;
-            x = 0;
-            y = 0;
-            origx = Console.CursorLeft;
-            origy = Console.CursorTop;
-            p = "P";
+            scale = 2;
             rows = map.GetLength(0);
             columns = map.GetLength(1);
 
@@ -60,25 +53,20 @@ namespace _2DRPGMap
             {
                 for (int y = 0; y < columns; y++)
                 {
-                   // ColourCode(x, y);
+                    ColourCode(x, y);
                     Console.Write(map[x, y]);
                 }
                 Console.WriteLine(); 
             }
-
             Console.ResetColor();
         }
 
 
         static void DisplayMap(int scale)
         {
-            int bordersize = columns * scale;
             Console.BackgroundColor = ConsoleColor.Black;
-            for (int r = 0; r < bordersize; r++)
-            {
-                Console.Write("#");
-            }
             Console.WriteLine();
+
             for (int x = 0; x < rows; x++)
             {
                 for (int m = 0; m < scale; m++)
@@ -87,7 +75,7 @@ namespace _2DRPGMap
                     {
                         for (int z = 0; z < scale; z++)
                         {
-                            //ColourCode(x, y);
+                            ColourCode(x, y);
                             Console.Write(map[x, y]);
                         }
                     }
@@ -95,35 +83,29 @@ namespace _2DRPGMap
                 }
             }
             Console.BackgroundColor = ConsoleColor.Black;
-
-            for (int r = 0; r < bordersize; r++)
-            {
-                Console.Write("#");
-            }
-            Console.WriteLine();
         }
 
 
-        //static void ColourCode(int x, int y) //Colours
-       // {
-        //    switch (map[x, y]) 
-         //   {
-         //       case '^':
-         //           Console.BackgroundColor = ConsoleColor.DarkGray;
-         //           break;
-         //       case '`':
-          //          Console.BackgroundColor = ConsoleColor.DarkGreen;
-          //          break;
-          //      case '~':
-          //          Console.BackgroundColor = ConsoleColor.DarkBlue;
-          //          break;
-          //      case '*':
-          //          Console.BackgroundColor = ConsoleColor.DarkYellow;
-         //           break;
-          //      default:
-         //           Console.BackgroundColor = ConsoleColor.Black;
-          //          break;
-         //   }
-       // }
+        static void ColourCode(int x, int y) //Colours
+        {
+            switch (map[x, y]) 
+            {
+                case '^':
+                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                    break;
+                case '`':
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    break;
+                case '~':
+                    Console.BackgroundColor = ConsoleColor.DarkBlue;
+                    break;
+                case '*':
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    break;
+                default:
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    break;
+            }
+        }
     }
 }

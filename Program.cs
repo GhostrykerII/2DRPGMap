@@ -60,7 +60,7 @@ namespace _2DRPGMap
             {
                 for (int y = 0; y < columns; y++)
                 {
-                    ColourCode(x, y);
+                   // ColourCode(x, y);
                     Console.Write(map[x, y]);
                 }
                 Console.WriteLine(); 
@@ -87,7 +87,7 @@ namespace _2DRPGMap
                     {
                         for (int z = 0; z < scale; z++)
                         {
-                            ColourCode(x, y);
+                            //ColourCode(x, y);
                             Console.Write(map[x, y]);
                         }
                     }
@@ -104,26 +104,26 @@ namespace _2DRPGMap
         }
 
 
-        static void ColourCode(int x, int y) //Colours
-        {
-            switch (map[x, y]) 
-            {
-                case '^':
-                    Console.BackgroundColor = ConsoleColor.DarkGray;
-                    break;
-                case '`':
-                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                    break;
-                case '~':
-                    Console.BackgroundColor = ConsoleColor.DarkBlue;
-                    break;
-                case '*':
-                    Console.BackgroundColor = ConsoleColor.DarkYellow;
-                    break;
-                default:
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    break;
-            }
-        }
+        //static void ColourCode(int x, int y) //Colours
+       // {
+        //    switch (map[x, y]) 
+         //   {
+         //       case '^':
+         //           Console.BackgroundColor = ConsoleColor.DarkGray;
+         //           break;
+         //       case '`':
+          //          Console.BackgroundColor = ConsoleColor.DarkGreen;
+          //          break;
+          //      case '~':
+          //          Console.BackgroundColor = ConsoleColor.DarkBlue;
+          //          break;
+          //      case '*':
+          //          Console.BackgroundColor = ConsoleColor.DarkYellow;
+         //           break;
+          //      default:
+         //           Console.BackgroundColor = ConsoleColor.Black;
+          //          break;
+         //   }
+       // }
     }
 }

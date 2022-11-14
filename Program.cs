@@ -20,8 +20,6 @@ namespace _2DRPGMap
         static bool moveRollBack;
         
 
-        
-
         static char[,] map = new char[,]
     {
         {'^','^','^','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
@@ -145,7 +143,7 @@ namespace _2DRPGMap
                     Console.BackgroundColor = ConsoleColor.Blue;
                     break;
                 case '*':
-                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
                     break;
                 case '█':
                     Console.BackgroundColor = ConsoleColor.DarkRed;
